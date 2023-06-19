@@ -25,14 +25,14 @@ public class TransactionHistory {
 
 		return result;
 	}
-	
+
 	public double calculateAccountBalance() {
 		double balance = 0.0;
-		
-		for(Transaction transaction: transactions) {
+
+		for (Transaction transaction : transactions) {
 			balance += transaction.getAmount();
 		}
-		
+
 		return balance;
 	}
 
@@ -46,21 +46,20 @@ public class TransactionHistory {
 		history.addTransaction(new Transaction(dateFormat.parse("20-MAY-2023"), "UpiTxnSushma", 900.50));
 		history.addTransaction(new Transaction(dateFormat.parse("15-MAY-2023"), "BankTransferUTIBIOOO", 45100.50));
 		history.addTransaction(new Transaction(dateFormat.parse("10-MAY-2023"), "purchase", -2508.50));
-		
-		//Retrieving transactions within a date range
+
+		// Retrieving transactions within a date range
 		Date startDate = dateFormat.parse("01-MAY-2023");
 		Date endDate = dateFormat.parse("20-MAY-2023");
 		List<Transaction> transactionsInRange = history.getTransactionsByDateRange(startDate, endDate);
-		
+
 		System.out.println("Transactions within the date range: ");
-		for(Transaction transaction: transactionsInRange) {
+		for (Transaction transaction : transactionsInRange) {
 			System.out.println(transaction);
 		}
-		
-		//Calculating the account balance
+
+		// Calculating the account balance
 		double accountBalance = history.calculateAccountBalance();
-		System.out.println("Account balance :"+ accountBalance);
-		
+		System.out.println("Account balance :" + accountBalance);
 
 	}
 
