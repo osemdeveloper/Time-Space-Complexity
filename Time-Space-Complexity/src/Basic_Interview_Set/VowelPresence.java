@@ -16,7 +16,7 @@ public class VowelPresence {
 	}
 	
 	public static void main(String[] args) {
-		String str = "Shrinivas";
+		String str = "sushma";
 		boolean isVowel = isVowelPresent(str);
 		
 		System.err.println("Given String :"+ str);
